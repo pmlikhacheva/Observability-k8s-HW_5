@@ -1,0 +1,43 @@
+grafana:
+  adminPassword: admin123
+
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      folder: /tmp/dashboards
+
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: default
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/default
+
+  dashboards:
+    default:
+      my-app-dashboard:
+        json: |
+          {
+            "title": "My App Dashboard",
+            "timezone": "browser",
+            "schemaVersion": 38,
+            "version": 1,
+            "panels": [
+              {
+                "type": "timeseries",
+                "title": "Requests/sec",
+                "targets": [
+                  {
+                    "expr": "rate(app_requests_total[5m])"
+                  }
+                ]
+              }
+            ]
+          }

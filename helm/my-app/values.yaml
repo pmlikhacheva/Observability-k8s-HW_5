@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: my-app
+  tag: latest
+
+service:
+  port: 80
+
+labels:
+  app: my-app
