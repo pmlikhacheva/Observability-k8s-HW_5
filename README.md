@@ -76,3 +76,5 @@ helm upgrade --install my-app ./helm/my-app -n app --create-namespace
    ![alt text](image-3.png)
 4. Grafana Dashboard
 ![alt text](image-4.png)
+
+<img width="858" height="236" alt="image" src="https://github.com/user-attachments/assets/9997c849-461f-45ad-a5b5-f14b4116f486" />
